@@ -3,14 +3,13 @@ function updateCountdown() {
     const nowUtc = new Date();
 
     // Chuyển đổi thời gian hiện tại sang múi giờ Việt Nam
-    const nowVn = new Date(nowUtc.toLocaleString(undefined, { timeZone: 'Asia/Bangkok' }));
-
+    const nowVn = new Date(nowUtc.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }));
 
     // Thời điểm Tết âm lịch năm 2024
-    const tet2024 = new Date("2024-02-10T00:00:00+07:00").getTime();
+    const tet2024 = new Date("2024-02-10T00:00:00Z").getTime();
 
-    // Tính thời gian còn lại
-    const timeRemaining = tet2024 - nowVn.getTime();
+    // Tính thời gian còn lại (cộng thêm 7 giờ)
+    const timeRemaining = tet2024 - nowVn.getTime() - 7 * 60 * 60 * 1000;
 
     // Tính số ngày, giờ, phút và giây
     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
@@ -24,33 +23,51 @@ function updateCountdown() {
     document.getElementById("minutesNumber").innerHTML = minutes;
     document.getElementById("secondsNumber").innerHTML = seconds;
 
-    // Hiển thị thời gian hiện tại ở múi giờ Việt Nam
+    // Hiển thị thời gian hiện tại
     displayCurrentTime();
 }
 
 function displayCurrentTime() {
-    // Lấy thời gian hiện tại ở múi giờ UTC
-    const thoiGianHienTaiUtc = new Date().toUTCString();
+    // Lấy thời gian hiện tại ở múi giờ Việt Nam
+    var thoiGianHienTai = new Date().toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' });
 
-    // Hiển thị thời gian hiện tại ở múi giờ Việt Nam
-    const thoiGianHienTai = new Date().toLocaleTimeString('en-US', { timeZone: 'Asia/Bangkok' });
+    // Chuyển đổi thời gian hiện tại thành đối tượng Date
+    var thoiGianHienTaiDate = new Date(thoiGianHienTai);
 
+    // Lấy giờ, phút và giây
+    var hoursNow = thoiGianHienTaiDate.getHours();
+    var minutesNow = thoiGianHienTaiDate.getMinutes();
+    var secondsNow = thoiGianHienTaiDate.getSeconds();
 
-    document.getElementById("thoiGianUtc").innerHTML = thoiGianHienTaiUtc;
-    document.getElementById("thoiGianVn").innerHTML = thoiGianHienTaiVn;
+    // Hiển thị thời gian hiện tại
+    document.getElementById("thoiGianNumber").innerHTML = `${hoursNow}:${minutesNow}:${secondsNow}`;
 }
 
 // Cập nhật mỗi giây
 setInterval(updateCountdown, 1000);
 
-// Cập nhật nhãn trước khi gọi hàm
-document.getElementById("daysLabel").innerHTML = "Ngày";
-document.getElementById("hoursLabel").innerHTML = "Giờ";
-document.getElementById("minutesLabel").innerHTML = "Phút";
-document.getElementById("secondsLabel").innerHTML = "Giây";
+// Lấy nhãn ngày và cập nhật giá trị
+const daysLabelElement = document.getElementById("daysLabel");
+daysLabelElement.innerHTML = "Ngày";
+
+// Lấy nhãn giờ và cập nhật giá trị
+const hoursLabelElement = document.getElementById("hoursLabel");
+hoursLabelElement.innerHTML = "Giờ";
+
+// Lấy nhãn phút và cập nhật giá trị
+const minutesLabelElement = document.getElementById("minutesLabel");
+minutesLabelElement.innerHTML = "Phút";
+
+// Lấy nhãn giây và cập nhật giá trị
+const secondsLabelElement = document.getElementById("secondsLabel");
+secondsLabelElement.innerHTML = "Giây";
 
 // Gọi hàm lần đầu để hiển thị ngay khi trang được tải
 updateCountdown();
 
 // Gọi hàm displayCurrentTime lần đầu để hiển thị thời gian hiện tại
 displayCurrentTime();
+
+
+
+
