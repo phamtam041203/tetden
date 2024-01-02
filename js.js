@@ -46,28 +46,5 @@ function displayCurrentTime() {
 // Cập nhật mỗi giây
 setInterval(updateCountdown, 1000);
 
-// Lấy nhãn ngày và cập nhật giá trị
-const daysLabelElement = document.getElementById("daysLabel");
-daysLabelElement.innerHTML = "Ngày";
-
-// Lấy nhãn giờ và cập nhật giá trị
-const hoursLabelElement = document.getElementById("hoursLabel");
-hoursLabelElement.innerHTML = "Giờ";
-
-// Lấy nhãn phút và cập nhật giá trị
-const minutesLabelElement = document.getElementById("minutesLabel");
-minutesLabelElement.innerHTML = "Phút";
-
-// Lấy nhãn giây và cập nhật giá trị
-const secondsLabelElement = document.getElementById("secondsLabel");
-secondsLabelElement.innerHTML = "Giây";
-
 // Gọi hàm lần đầu để hiển thị ngay khi trang được tải
 updateCountdown();
-
-// Gọi hàm displayCurrentTime lần đầu để hiển thị thời gian hiện tại
-displayCurrentTime();
-
-
-
-
