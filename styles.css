@@ -21,31 +21,31 @@ h1 {
 }
 
 .countdown-box {
-    border: 2px solid #333;
-    border-radius: 20px;
-    background-color: #af8282;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100px;
-    text-align: center;
-
+  border: 2px solid #333;
+  border-radius: 20px;
+  background-color: #af8282;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  height: 60px; /* Fixed height to maintain a square shape */
+  text-align: center;
+  overflow: hidden; /* Hide overflowing content */
 }
 
 .countdown-number {
-  font-size: 2em; /* Kích thước số */
-    font-weight: bold;
-    /* Không sử dụng flex ở đây */
+  font-size: 1.2em; /* Adjust the font size to fit within the box */
+  font-weight: bold;
+  white-space: nowrap; /* Prevent text from wrapping */
+  line-height: 1.2; /* Adjust the line height to ensure proper spacing */
 }
 
 .countdown-label {
-  font-size: 1em; /* Kích thước nhãn */
-    margin-top: auto;
-    font-family: 'Pacifico', cursive;;
-    /* Không sử dụng flex ở đây */
-
+  font-size: 0.8em; /* Kích thước nhãn */
+  font-family: 'Pacifico', cursive;
 }
+
 body {
   margin: 0;
   padding: 0;
