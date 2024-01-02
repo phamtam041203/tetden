@@ -1,0 +1,132 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-color: #c98484;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #333;
+}
+
+#countdown {
+    font-size: 24px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 600px; /* Giới hạn chiều rộng tối đa để giữ mã responsive */
+    margin: 0 auto; /* Canh giữa trên mọi màn hình */
+}
+
+.countdown-box {
+    border: 2px solid #333;
+    border-radius: 20px;
+    background-color: #af8282;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    text-align: center;
+
+}
+
+.countdown-number {
+  font-size: 2em; /* Kích thước số */
+    font-weight: bold;
+    /* Không sử dụng flex ở đây */
+}
+
+.countdown-label {
+  font-size: 1em; /* Kích thước nhãn */
+    margin-top: auto;
+    font-family: 'Pacifico', cursive;;
+    /* Không sử dụng flex ở đây */
+
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+
+
+
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 24px;
+  text-decoration: none;
+  border: 1px solid #333; /* Màu sắc viền */
+  padding: 10px; /* Khoảng cách giữa biểu tượng và viền */
+
+}
+
+.fb-icon {
+  color: #0d4792; /* Màu sắc Facebook */
+}
+
+.gmail-icon {
+  color: #db4437; /* Màu sắc Gmail */
+}
+
+.youtube-icon {
+  color: #6a0808; /* Màu sắc YouTube */
+}
+
+.social-icons a:hover {
+  opacity: 0.8; /* Hiệu ứng mờ khi di chuột qua */
+}
+header {
+  background-color: #c37777;
+  padding: 10px;
+  color: rgb(222, 67, 67);
+  text-align: center;
+}
+p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+/* Sử dụng media query để thay đổi kích thước ảnh dựa trên kích thước màn hình */
+@media only screen and (max-width: 600px) {
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  img {
+      max-width: 80%;
+      height: auto;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  img {
+      max-width: 60%;
+      height: auto;
+  }
+}
+#currentDate {
+  font-size: 5vw; /* Sử dụng vw (viewport width) để điều chỉnh kích thước theo chiều rộng của màn hình */
+  font-weight: bold;
+  font-family: 'Pacifico', cursive;
+  color: rgb(203, 47, 47);
+  margin: 0.5em; /* Khoảng cách giữa #currentDate và các phần khác */
+  text-align: center; /* Canh giữa văn bản */
+}
