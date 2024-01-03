@@ -2,9 +2,12 @@ body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
     margin: 50px;
+
     background-color: #c98484;
+
     
 }
+
 
 h1 {
     font-family: 'Pacifico', cursive;
@@ -12,6 +15,7 @@ h1 {
 }
 
 #countdown {
+
     font-size: 24px;
     margin-top: 20px;
     display: flex;
