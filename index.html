@@ -26,6 +26,7 @@
 
 
     <p id="currentDate" style="font-family: 'Pacifico', cursive; color: rgb(203, 47, 47);"></p>
+    <div id="clock" style="font-family: 'Pacifico', cursive; color: rgb(203, 47, 47);"></div>
 
     <h1 style="background-image: url(bgg.jpg);">Sắp Tết rồi!!! Chỉ còn...</h1>
     <div id="countdown">
@@ -48,7 +49,7 @@
     </div>
     <h1 style="font-size: 70px; color: rgb(135, 82, 45);">Giáp thìn 2024</h1>
     <img class="bgtet" src="tet-nguyen-dan.png" alt="tet">
-    <p style="font-size: 40px; font-family:'Pacifico', cursive; color: rgb(21, 2, 5);">Nguyễn Thuý Bình ❤️</p>
+    <p style="font-size: 40px; font-family:'Pacifico', cursive; color: rgb(21, 2, 5);">zhurong ❤️</p>
     <img src="bao-nhieu-ngay-nua-Tet.jpg" alt="he">
 
 
@@ -79,6 +80,25 @@
     <script>
         
     </script>
+<script>
+    function updateTime() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+
+        // Chuyển đổi sang định dạng 24 giờ
+        var timeString = (hours < 10 ? '0' : '') + hours + ':' +
+                          (minutes < 10 ? '0' : '') + minutes + ':' +
+                          (seconds < 10 ? '0' : '') + seconds;
+
+        var clock = document.getElementById('clock');
+        clock.innerHTML = 'Giờ hiện tại: ' + timeString;
+    }
+
+    setInterval(updateTime, 1000); // cập nhật thời gian sau mỗi giây
+</script>
+
 
 
 
