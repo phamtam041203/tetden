@@ -6,14 +6,14 @@ function updateCountdown() {
     const nowVn = new Date(nowUtc.toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }));
 
     // Thời điểm Tết âm lịch năm 2024
-    const tet2024 = new Date("2024-02-10T00:00:00Z").getTime();
+    const tet2024 = new Date("2025-02-10T00:00:00Z").getTime();
 
     // Tính thời gian còn lại (cộng thêm 7 giờ)
-    const timeRemaining = tet2024 - nowVn.getTime() - 7 * 60 * 60 * 1000;
+    const timeRemaining = tet2024 - nowVn.getTime() - 300 * 60 * 60 * 1000;
 
     // Tính số ngày, giờ, phút và giây
     const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 19)) / (1000 * 60 * 60));
     const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
